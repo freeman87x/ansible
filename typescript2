@@ -1,0 +1,291 @@
+Script started on 2022-06-16 20:42:34+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="129" LINES="39"]
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# exitscript[4Pllcd ~/Ansible/exit[K[2Pll[Klexitscriptansible nginx -m command -a "uname -r"ping[K[5Pnano ansible.cfgansible nginx -m ping[13@i inventory -[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pnano inventory ansible.cfg
+[?2004h[?1049h[22;0;0t[1;39r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[37;58H(B[0;7m[ Reading... ](B[m[37;57H(B[0;7m[ Read 5 lines ](B[m[H(B[0;7m  GNU nano 4.8                                               ansible.cfg                                                         [1;128H(B[m[38d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[38;113H(B[0;7mM-A(B[m Mark Text[39d(B[0;7m^X(B[m Exit[39;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[39;113H(B[0;7mM-6(B[m Copy Text[37d[2d(B[0;1m[32m[defaults][3d[39m(B[minventory = inventory[4dremote_user = vagrant[5dhost_key_checking = False[6dretry_files_enabled = False[2d[?12l[?25h[?25l[37d[J[39d[?12l[?25h[39;1H[?1049l[23;0;0t[?1l>[?2004l]0;root@artem: ~/Ansibleroot@artem:~/Ansible# nano ansible.cfgexit[Kscript[4Pllcd ~/Ansible/exit[K[2Pll[Klexitscriptansible nginx -m command -a "uname -r"ping[K[5Pnano ansible.cfgansible nginx -m ping[5Pnano ansible.cfgansible nginx -m pingcommand -a "uname -r"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript[K[2Pexit[2Pll[Klexitcd ~/Ansible/ll[Kscript[2Pexitnano ansible.cfg[Kcat ansible.cfg 
+[defaults]
+inventory = inventory
+remote_user = vagrant
+host_key_checking = False
+retry_files_enabled = False
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# cat inventory 
+[web]
+nginx ansible_host=127.0.0.1 ansible_port=2222 ansible_private_key_file=.vagrant/machines/nginx/virtualbox/private_key
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# cat ansible.cfg 
+[defaults]
+inventory = inventory
+remote_user = vagrant
+host_key_checking = False
+retry_files_enabled = False
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m command -a "uname -r"
+[0;33mnginx | CHANGED | rc=0 >>[0m
+[0;33m3.10.0-1127.el7.x86_64[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# vaf[Kgrant up
+[0mBringing machine 'nginx' up with 'virtualbox' provider...[0m
+[1m==> nginx: Checking if box 'centos/7' version '2004.01' is up to date...[0m
+[1m==> nginx: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> nginx: flag to force provisioning. Provisioners marked to run always will still run.[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m systemd -a name=firewalld
+[0;32mnginx | SUCCESS => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;32m    },[0m
+[0;32m    "changed": false,[0m
+[0;32m    "name": "firewalld",[0m
+[0;32m    "status": {[0m
+[0;32m        "ActiveEnterTimestampMonotonic": "0",[0m
+[0;32m        "ActiveExitTimestampMonotonic": "0",[0m
+[0;32m        "ActiveState": "inactive",[0m
+[0;32m        "After": "dbus.service basic.target polkit.service system.slice",[0m
+[0;32m        "AllowIsolate": "no",[0m
+[0;32m        "AmbientCapabilities": "0",[0m
+[0;32m        "AssertResult": "no",[0m
+[0;32m        "AssertTimestampMonotonic": "0",[0m
+[0;32m        "Before": "shutdown.target network-pre.target",[0m
+[0;32m        "BlockIOAccounting": "no",[0m
+[0;32m        "BlockIOWeight": "18446744073709551615",[0m
+[0;32m        "BusName": "org.fedoraproject.FirewallD1",[0m
+[0;32m        "CPUAccounting": "no",[0m
+[0;32m        "CPUQuotaPerSecUSec": "infinity",[0m
+[0;32m        "CPUSchedulingPolicy": "0",[0m
+[0;32m        "CPUSchedulingPriority": "0",[0m
+[0;32m        "CPUSchedulingResetOnFork": "no",[0m
+[0;32m        "CPUShares": "18446744073709551615",[0m
+[0;32m        "CanIsolate": "no",[0m
+[0;32m        "CanReload": "yes",[0m
+[0;32m        "CanStart": "yes",[0m
+[0;32m        "CanStop": "yes",[0m
+[0;32m        "CapabilityBoundingSet": "18446744073709551615",[0m
+[0;32m        "ConditionResult": "no",[0m
+[0;32m        "ConditionTimestampMonotonic": "0",[0m
+[0;32m        "Conflicts": "iptables.service ip6tables.service ipset.service ebtables.service shutdown.target",[0m
+[0;32m        "ControlPID": "0",[0m
+[0;32m        "DefaultDependencies": "yes",[0m
+[0;32m        "Delegate": "no",[0m
+[0;32m        "Description": "firewalld - dynamic firewall daemon",[0m
+[0;32m        "DevicePolicy": "auto",[0m
+[0;32m        "Documentation": "man:firewalld(1)",[0m
+[0;32m        "EnvironmentFile": "/etc/sysconfig/firewalld (ignore_errors=yes)",[0m
+[0;32m        "ExecMainCode": "0",[0m
+[0;32m        "ExecMainExitTimestampMonotonic": "0",[0m
+[0;32m        "ExecMainPID": "0",[0m
+[0;32m        "ExecMainStartTimestampMonotonic": "0",[0m
+[0;32m        "ExecMainStatus": "0",[0m
+[0;32m        "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",[0m
+[0;32m        "ExecStart": "{ path=/usr/sbin/firewalld ; argv[]=/usr/sbin/firewalld --nofork --nopid $FIREWALLD_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",[0m
+[0;32m        "FailureAction": "none",[0m
+[0;32m        "FileDescriptorStoreMax": "0",[0m
+[0;32m        "FragmentPath": "/usr/lib/systemd/system/firewalld.service",[0m
+[0;32m        "GuessMainPID": "yes",[0m
+[0;32m        "IOScheduling": "0",[0m
+[0;32m        "Id": "firewalld.service",[0m
+[0;32m        "IgnoreOnIsolate": "no",[0m
+[0;32m        "IgnoreOnSnapshot": "no",[0m
+[0;32m        "IgnoreSIGPIPE": "yes",[0m
+[0;32m        "InactiveEnterTimestampMonotonic": "0",[0m
+[0;32m        "InactiveExitTimestampMonotonic": "0",[0m
+[0;32m        "JobTimeoutAction": "none",[0m
+[0;32m        "JobTimeoutUSec": "0",[0m
+[0;32m        "KillMode": "mixed",[0m
+[0;32m        "KillSignal": "15",[0m
+[0;32m        "LimitAS": "18446744073709551615",[0m
+[0;32m        "LimitCORE": "18446744073709551615",[0m
+[0;32m        "LimitCPU": "18446744073709551615",[0m
+[0;32m        "LimitDATA": "18446744073709551615",[0m
+[0;32m        "LimitFSIZE": "18446744073709551615",[0m
+[0;32m        "LimitLOCKS": "18446744073709551615",[0m
+[0;32m        "LimitMEMLOCK": "65536",[0m
+[0;32m        "LimitMSGQUEUE": "819200",[0m
+[0;32m        "LimitNICE": "0",[0m
+[0;32m        "LimitNOFILE": "4096",[0m
+[0;32m        "LimitNPROC": "657",[0m
+[0;32m        "LimitRSS": "18446744073709551615",[0m
+[0;32m        "LimitRTPRIO": "0",[0m
+[0;32m        "LimitRTTIME": "18446744073709551615",[0m
+[0;32m        "LimitSIGPENDING": "657",[0m
+[0;32m        "LimitSTACK": "18446744073709551615",[0m
+[0;32m        "LoadState": "loaded",[0m
+[0;32m        "MainPID": "0",[0m
+[0;32m        "MemoryAccounting": "no",[0m
+[0;32m        "MemoryCurrent": "18446744073709551615",[0m
+[0;32m        "MemoryLimit": "18446744073709551615",[0m
+[0;32m        "MountFlags": "0",[0m
+[0;32m        "Names": "firewalld.service",[0m
+[0;32m        "NeedDaemonReload": "no",[0m
+[0;32m        "Nice": "0",[0m
+[0;32m        "NoNewPrivileges": "no",[0m
+[0;32m        "NonBlocking": "no",[0m
+[0;32m        "NotifyAccess": "none",[0m
+[0;32m        "OOMScoreAdjust": "0",[0m
+[0;32m        "OnFailureJobMode": "replace",[0m
+[0;32m        "PermissionsStartOnly": "no",[0m
+[0;32m        "PrivateDevices": "no",[0m
+[0;32m        "PrivateNetwork": "no",[0m
+[0;32m        "PrivateTmp": "no",[0m
+[0;32m        "ProtectHome": "no",[0m
+[0;32m        "ProtectSystem": "no",[0m
+[0;32m        "RefuseManualStart": "no",[0m
+[0;32m        "RefuseManualStop": "no",[0m
+[0;32m        "RemainAfterExit": "no",[0m
+[0;32m        "Requires": "basic.target system.slice",[0m
+[0;32m        "Restart": "no",[0m
+[0;32m        "RestartUSec": "100ms",[0m
+[0;32m        "Result": "success",[0m
+[0;32m        "RootDirectoryStartOnly": "no",[0m
+[0;32m        "RuntimeDirectoryMode": "0755",[0m
+[0;32m        "SameProcessGroup": "no",[0m
+[0;32m        "SecureBits": "0",[0m
+[0;32m        "SendSIGHUP": "no",[0m
+[0;32m        "SendSIGKILL": "yes",[0m
+[0;32m        "Slice": "system.slice",[0m
+[0;32m        "StandardError": "null",[0m
+[0;32m        "StandardInput": "null",[0m
+[0;32m        "StandardOutput": "null",[0m
+[0;32m        "StartLimitAction": "none",[0m
+[0;32m        "StartLimitBurst": "5",[0m
+[0;32m        "StartLimitInterval": "10000000",[0m
+[0;32m        "StartupBlockIOWeight": "18446744073709551615",[0m
+[0;32m        "StartupCPUShares": "18446744073709551615",[0m
+[0;32m        "StatusErrno": "0",[0m
+[0;32m        "StopWhenUnneeded": "no",[0m
+[0;32m        "SubState": "dead",[0m
+[0;32m        "SyslogLevelPrefix": "yes",[0m
+[0;32m        "SyslogPriority": "30",[0m
+[0;32m        "SystemCallErrorNumber": "0",[0m
+[0;32m        "TTYReset": "no",[0m
+[0;32m        "TTYVHangup": "no",[0m
+[0;32m        "TTYVTDisallocate": "no",[0m
+[0;32m        "TasksAccounting": "no",[0m
+[0;32m        "TasksCurrent": "18446744073709551615",[0m
+[0;32m        "TasksMax": "18446744073709551615",[0m
+[0;32m        "TimeoutStartUSec": "1min 30s",[0m
+[0;32m        "TimeoutStopUSec": "1min 30s",[0m
+[0;32m        "TimerSlackNSec": "50000",[0m
+[0;32m        "Transient": "no",[0m
+[0;32m        "Type": "dbus",[0m
+[0;32m        "UMask": "0022",[0m
+[0;32m        "UnitFilePreset": "enabled",[0m
+[0;32m        "UnitFileState": "disabled",[0m
+[0;32m        "Wants": "network-pre.target",[0m
+[0;32m        "WatchdogTimestampMonotonic": "0",[0m
+[0;32m        "WatchdogUSec": "0"[0m
+[0;32m    }[0m
+[0;32m}[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m yum -a "name=epel-release state=present" -b
+[0;33mnginx | CHANGED => {[0m
+[0;33m    "ansible_facts": {[0m
+[0;33m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;33m    },[0m
+[0;33m    "changed": true,[0m
+[0;33m    "changes": {[0m
+[0;33m        "installed": [[0m
+[0;33m            "epel-release"[0m
+[0;33m        ][0m
+[0;33m    },[0m
+[0;33m    "msg": "warning: /var/cache/yum/x86_64/7/extras/packages/epel-release-7-11.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY\nImporting GPG key 0xF4A80EB5:\n Userid     : \"CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>\"\n Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5\n Package    : centos-release-7-8.2003.0.el7.centos.x86_64 (@anaconda)\n From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7\n",[0m
+[0;33m    "rc": 0,[0m
+[0;33m    "results": [[0m
+[0;33m        "Loaded plugins: fastestmirror\nLoading mirror speeds from cached hostfile\n * base: mirror.sale-dedic.com\n * extras: mirror.corbina.net\n * updates: mirror.corbina.net\nResolving Dependencies\n--> Running transaction check\n---> Package epel-release.noarch 0:7-11 will be installed\n--> Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package                Arch             Version         Repository        Size\n================================================================================\nInstalling:\n epel-release           noarch           7-11            extras            15 k\n\nTransaction Summary\n================================================================================\nInstall  1 Package\n\nTotal download size: 15 k\nInstalled size: 24 k\nDownloading packages:\nPublic key for epel-release-7-11.noarch.rpm is not installed\nRetrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7\nRunning transaction check\nRunning transaction test\nTransaction test succeeded\nRunning transaction\n  Installing : epel-release-7-11.noarch                                     1/1 \n  Verifying  : epel-release-7-11.noarch                                     1/1 \n\nInstalled:\n  epel-release.noarch 0:7-11                                                    \n\nComplete!\n"[0m
+[0;33m    ][0m
+[0;33m}[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m yum -a "name=epel-release state=present" -b[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kтфтщ[K[K[K[Knano c[Kansible.cfg 
+[?2004h[?1049h[22;0;0t[1;39r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[37;58H(B[0;7m[ Reading... ](B[m[37;57H(B[0;7m[ Read 5 lines ](B[m[H(B[0;7m  GNU nano 4.8                                               ansible.cfg                                                         [1;128H(B[m[38d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[38;113H(B[0;7mM-A(B[m Mark Text[39d(B[0;7m^X(B[m Exit[39;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[39;113H(B[0;7mM-6(B[m Copy Text[37d[2d(B[0;1m[32m[defaults][3d[39m(B[minventory = inventory[4dremote_user = vagrant[5dhost_key_checking = False[6dretry_files_enabled = False[2d[?12l[?25h[?25l[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[?12l[?25h[?25l[1;120H(B[0;7mModified(B[m[8d[?12l[?25h[?25l(B[0;1m[32m[all:vars][9d[39m(B[mansible_python_interpreter=/usr/bin/python3[37d[K[9;44H[?12l[?25h[?25l[37d(B[0;7mSave modified buffer?                                                                                                            [38;1H Y(B[m Yes[K[39d(B[0;7m N(B[m No  [39;18H(B[0;7mC(B[m Cancel[K[37;23H[?12l[?25h[?25l[38d(B[0;7m^G(B[m Get Help[38;33H(B[0;7mM-D(B[m DOS Format[38;65H(B[0;7mM-A(B[m Append[38;97H(B[0;7mM-B(B[m Backup File[39d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[39;65H(B[0;7mM-P(B[m Prepend[39;97H(B[0;7m^T(B[m To Files[37d(B[0;7mFile Name to Write: ansible.cfg(B[m[37;32H[?12l[?25h[?25l[37;57H[1K (B[0;7m[ Writing... ](B[m[K[1;120H(B[0;7m        (B[m[37;57H(B[0;7m[ Wrote 8 lines ](B[m[J[39d[?12l[?25h[39;1H[?1049l[23;0;0t[?1l>[?2004l]0;root@artem: ~/Ansibleroot@artem:~/Ansible# nano ansible.cfg ansible nginx -m yum -a "name=epel-release state=present" -b
+[0;32mnginx | SUCCESS => {[0m
+[0;32m    "ansible_facts": {[0m
+[0;32m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;32m    },[0m
+[0;32m    "changed": false,[0m
+[0;32m    "msg": "",[0m
+[0;32m    "rc": 0,[0m
+[0;32m    "results": [[0m
+[0;32m        "epel-release-7-11.noarch providing epel-release is already installed"[0m
+[0;32m    ][0m
+[0;32m}[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m yum -a "name=epel-release state=present" -b[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano ansible.cfg [Kansible nginx -m yum -a "name=epel-release state=present" -b[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Psystemd -a name=firewalld[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvagrant up[Kansible nginx -m command -a "uname -r"
+[0;33mnginx | CHANGED | rc=0 >>[0m
+[0;33m3.10.0-1127.el7.x86_64[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# nano playbook.yml
+[?2004h[?1049h[22;0;0t[1;39r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[37;59H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                                              playbook.yml                                                         [1;128H(B[m[38d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[38;113H(B[0;7mM-A(B[m Mark Text[39d(B[0;7m^X(B[m Exit[39;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[39;113H(B[0;7mM-6(B[m Copy Text[37d[2d[39;49m(B[m[?12l[?25h[?25l[1;120H(B[0;7mModified[37d(B[m[K[1;128H[2d---[3d- name: Install EPEL Repo[4;3Hhosts: nginx[5;3Hbecome: true[6;3Htasks:[7;5H- name: Install EPEL Repo package from standart repo[8;7Hyum:[9dname: epel-release[10;9Hstate: present[?12l[?25h[?25l[37d(B[0;7mSave modified buffer?                                                                                                            [38;1H Y(B[m Yes[K[39d(B[0;7m N(B[m No  [39;18H(B[0;7mC(B[m Cancel[K[37;23H[?12l[?25h[?25l[38d(B[0;7m^G(B[m Get Help[38;33H(B[0;7mM-D(B[m DOS Format[38;65H(B[0;7mM-A(B[m Append[38;97H(B[0;7mM-B(B[m Backup File[39d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[39;65H(B[0;7mM-P(B[m Prepend[39;97H(B[0;7m^T(B[m To Files[37d(B[0;7mFile Name to Write: playbook.yml(B[m[37;33H[?12l[?25h[?25l[37;57H[1K (B[0;7m[ Writing... ](B[m[K[1;120H(B[0;7m        (B[m[37;57H(B[0;7m[ Wrote 9 lines ](B[m[J[39d[?12l[?25h[39;1H[?1049l[23;0;0t[?1l>[?2004l]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible-playbook epel.yml
+[0;31mERROR! the playbook: epel.yml could not be found[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible-playbook epel.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmv playbook.yml epel.yml
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# mv playbook.yml epel.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ansible-playbook[C[C[C[C[C[C[C[C[C
+
+PLAY [Install EPEL Repo] ********************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************
+[0;32mok: [nginx][0m
+
+TASK [Install EPEL Repo package from standart repo] *****************************************************************************
+[0;32mok: [nginx][0m
+
+PLAY RECAP **********************************************************************************************************************
+[0;32mnginx[0m                      : [0;32mok=2   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m yum -a "name=epel-release
+> state=absent" -bansible nginx -m yum -a "name=epel-release[C[C[26Pstate=absent" -b[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K^C
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible nginx -m yum -a "name=epel-release state=absent" -b
+[0;33mnginx | CHANGED => {[0m
+[0;33m    "ansible_facts": {[0m
+[0;33m        "discovered_interpreter_python": "/usr/bin/python"[0m
+[0;33m    },[0m
+[0;33m    "changed": true,[0m
+[0;33m    "changes": {[0m
+[0;33m        "removed": [[0m
+[0;33m            "epel-release"[0m
+[0;33m        ][0m
+[0;33m    },[0m
+[0;33m    "msg": "",[0m
+[0;33m    "rc": 0,[0m
+[0;33m    "results": [[0m
+[0;33m        "Loaded plugins: fastestmirror\nResolving Dependencies\n--> Running transaction check\n---> Package epel-release.noarch 0:7-11 will be erased\n--> Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package                Arch             Version        Repository         Size\n================================================================================\nRemoving:\n epel-release           noarch           7-11           @extras            24 k\n\nTransaction Summary\n================================================================================\nRemove  1 Package\n\nInstalled size: 24 k\nDownloading packages:\nRunning transaction check\nRunning transaction test\nTransaction test succeeded\nRunning transaction\n  Erasing    : epel-release-7-11.noarch                                     1/1 \n  Verifying  : epel-release-7-11.noarch                                     1/1 \n\nRemoved:\n  epel-release.noarch 0:7-11                                                    \n\nComplete!\n"[0m
+[0;33m    ][0m
+[0;33m}[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# nano epel.yml 
+[?2004h[?1049h[22;0;0t[1;39r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[37;58H(B[0;7m[ Reading... ](B[m[37;57H(B[0;7m[ Read 9 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                epel.yml                                                           [1;128H(B[m[38d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[97G(B[0;7mM-U(B[m Undo[38;113H(B[0;7mM-A(B[m Mark Text[39d(B[0;7m^X(B[m Exit[39;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line   (B[0;7mM-E(B[m Redo[39;113H(B[0;7mM-6(B[m Copy Text[37d[2d[39;49m(B[m---[3d- name: Install EPEL Repo[4;3Hhosts: nginx[5;3Hbecome: true[6;3Htasks:[7;5H- name: Install EPEL Repo package from standart repo[8;7Hyum:[9dname: epel-release[10;9Hstate: present[2d[?12l[?25h[?25l[1;120H(B[0;7mModified(B[m[2;3H [?12l[?25h[?25l- [?12l[?25h[?25l[K[?12l[?25h[?25l[2;36r[36;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l Repo[K[?12l[?25h[?25lRepo[K[?12l[?25h[?25lepo[K[37d[K[2d[?12l[?25h[?25lpo[K[?12l[?25h[?25lo[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25lnginx[K[?12l[?25h[?25lginx[K[?12l[?25h[?25linx[K[?12l[?25h[?25lnx[K[?12l[?25h[?25lx[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l true[K[?12l[?25h[?25ltrue[K[?12l[?25h[?25lrue[K[?12l[?25h[?25lue[K[?12l[?25h[?25le[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25lasks:[K[?12l[?25h[?25lsks:[K[?12l[?25h[?25lks:[K[?12l[?25h[?25ls:[K[?12l[?25h[?25l:[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l repo[K[?12l[?25h[?25lrepo[K[?12l[?25h[?25lepo[K[?12l[?25h[?25lpo[K[?12l[?25h[?25lo[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l yum:[K[?12l[?25h[?25lyum:[K[?12l[?25h[?25lum:[K[?12l[?25h[?25lm:[K[?12l[?25h[?25l:[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25llease[K[?12l[?25h[?25lease[K[?12l[?25h[?25lase[K[?12l[?25h[?25lse[K[?12l[?25h[?25le[K[?12l[?25h[?25l[K[?12l[?25h[?25l[2;37r[37;1H
+[1;39r[2;1H[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25lesent[K[?12l[?25h[?25lsent[K[?12l[?25h[?25lent[K[?12l[?25h[?25lnt[K[?12l[?25h[?25lt[K[?12l[?25h[?25l[K[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l---[3d- name: NGINX | Install and configure NGINX[4;3Hhosts: nginx[5;3Hbecome: true[7;3Htasks:[8;5H- name: NGINX | Install EPEL Repo package from standart repo[9;7Hyum:[10dname: epel-release[11;9Hstate: present[12;7Htags:[13;9H- epel-package[14;9H- packages[16;5H- name: NGINX | Install NGINX package from EPEL Repo[17;7Hyum:[18dname: nginx[19;9Hstate: latest[20;7Htags:[21;9H- nginx-package[22;9H- packages[?12l[?25h[?25l[37d(B[0;7mSave modified buffer?                                                                                                            [38;1H Y(B[m Yes[K[39d(B[0;7m N(B[m No  [39;18H(B[0;7mC(B[m Cancel[K[37;23H[?12l[?25h[?25l[38d(B[0;7m^G(B[m Get Help[38;33H(B[0;7mM-D(B[m DOS Format[38;65H(B[0;7mM-A(B[m Append[38;97H(B[0;7mM-B(B[m Backup File[39d(B[0;7m^C(B[m Cancel[17G         [33G(B[0;7mM-M(B[m Mac Format[39;65H(B[0;7mM-P(B[m Prepend[39;97H(B[0;7m^T(B[m To Files[37d(B[0;7mFile Name to Write: epel.yml(B[m[37;29H[?12l[?25h[?25l[37;57H[1K (B[0;7m[ Writing... ](B[m[K[1;120H(B[0;7m        (B[m[37;56H(B[0;7m[ Wrote 21 lines ](B[m[J[39d[?12l[?25h[39;1H[?1049l[23;0;0t[?1l>[?2004l]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible-playbook nginx.yml --list-tags
+[0;31mERROR! the playbook: nginx.yml could not be found[0m
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible-playbook nginx.yml --list-tags[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano epel.yml ansible nginx -m yum -a "name=epel-release state=absent" -b[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17P-playbook epel.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pmv playbook.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ansible-playbook[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pmv playbook.yml[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kepel.yml nginx.yml
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# mv epel.yml nginx.ymlansible-playbook nginx.yml --list-tags
+
+playbook: nginx.yml
+
+  play #1 (nginx): NGINX | Install and configure NGINX	TAGS: []
+      TASK TAGS: [epel-package, nginx-package, packages]
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible-playbook nginx.yml -t nginx-package
+
+PLAY [NGINX | Install and configure NGINX] **************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************
+[0;32mok: [nginx][0m
+
+TASK [NGINX | Install NGINX package from EPEL Repo] *****************************************************************************
+[0;31mfatal: [nginx]: FAILED! => {"changed": false, "msg": "No package matching 'nginx' found available, installed or updated", "rc": 126, "results": ["No package matching 'nginx' found available, installed or updated"]}[0m
+
+PLAY RECAP **********************************************************************************************************************
+[0;31mnginx[0m                      : [0;32mok=1   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
+
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# ansible-playbook nginx.yml -t nginx-package[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kl
+
+PLAY [NGINX | Install and configure NGINX] **************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************
+[0;32mok: [nginx][0m
+
+TASK [NGINX | Install EPEL Repo package from standart repo] *********************************************************************
+[0;33mchanged: [nginx][0m
+
+TASK [NGINX | Install NGINX package from EPEL Repo] *****************************************************************************
+[0;33mchanged: [nginx][0m
+
+PLAY RECAP **********************************************************************************************************************
+[0;33mnginx[0m                      : [0;32mok=3   [0m [0;33mchanged=2   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;root@artem: ~/Ansibleroot@artem:~/Ansible# exit
+exit
+
+Script done on 2022-06-16 21:02:03+00:00 [COMMAND_EXIT_CODE="0"]

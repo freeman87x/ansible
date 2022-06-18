@@ -1,0 +1,12 @@
+Log created: 2022-06-16T21:02:33.197950000Z
+Process ID:  6974 (0x1b3e)
+Parent PID:  1 (0x1)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: Ansible_nginx_1655154322307_50962
+Arg[3]: --startvm
+Arg[4]: 5092486b-01c0-453c-a34f-33b416b75797
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
